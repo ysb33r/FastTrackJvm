@@ -1,0 +1,51 @@
+== Let's review our tests
+
+image::images/success-spock-test-report.png[974x398]
+
+=== Let's get unit testing
+
+[source,groovy]
+----
+include::{srctestdir}/calculator/CalculatorSpec.groovy[tags=basic_spock]
+----
+
+=== When this test fails
+
+image::images/failed-spock-test-web.png[]
+
+=== When this test fails
+
+image::images/failed-spock-test-report.png[]
+
+=== Spock Framework
+
+* Built on top of `JUnit 4.x`.
+* Use it with all your `JUnit` tools!
+* Use for more than just unit tests.
+* Mocks & stubs included
+* Easily test Java, Groovy, Kotlin, Scala etc.
+
+=== Data-driven tests
+
+[source,groovy]
+----
+include::{srctestdir}/calculator/CalculatorSpec.groovy[tags=data_driven_spock_1]
+----
+
+=== Another cool failure report
+
+image::images/failed-spock-test-report-2.png[938x600]
+
+=== Handling exceptions
+
+[source,groovy]
+----
+include::{srctestdir}/calculator/CalculatorSpec.groovy[tags=exception_spock]
+----
+
+=== Mock out interfaces
+
+[source,groovy]
+----
+include::{srctestdir}/calculator/CalculatorSpec.groovy[tags=interface_spock]
+----

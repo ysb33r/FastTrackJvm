@@ -1,0 +1,15 @@
+= Idiomatic Gradle Plugin Writing
+:author: Schalk W. Cronjé
+:email: ysb33r@gmail.com
+:twitter: @ysb33r
+:docinfo1:
+:revealjs_keyboard: true
+:revealjs_overview: true
+:revealjs_theme: beige
+:revealjs_controls: false
+:revealjs_history: true
+:revealjs_slideNumber : true
+:revealjs_center: false
+:icons: font
+coderay-css: stylesheets/asciidoctor-coderay.css
+

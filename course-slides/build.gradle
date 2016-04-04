@@ -1,0 +1,78 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "org.asciidoctor:asciidoctor-gradle-plugin:1.5.2"
+        classpath "org.ysb33r.gradle:vfs-gradle-plugin:1.0-beta3"
+        classpath "com.github.jruby-gradle:jruby-gradle-plugin:1.1.4"
+        classpath "commons-httpclient:commons-httpclient:3.1"
+    }
+}
+
+
+// Two asciidoctor tasks
+// one for slides, one for sessions
+
+apply plugin : 'org.asciidoctor.convert'
+
+asciidoctor {
+
+    sources {
+        include 'sessions.adoc'
+        include 'ftjd-session-*.adoc'
+    }
+
+    resources {
+        from('src/docs/asciidoc') {
+            include 'images/**'
+            include 'stylesheets/**'
+        }
+    }
+
+    backends 'html5'
+
+    attributes 'source-highlighter': 'coderay',
+        groovydir : "groovy/groovy-${groovyVer}",
+        gradledir : "gradle/gradle-${gradleVer}"
+
+//    requires 'tilt','slim'
+//    dependsOn jrubyPrepare
+
+}
+
+// add task for introductory slides
+//asciidoctor {
+//
+//    sources {
+//        include 'devoxxma2015.adoc'
+//    }
+//
+//    resources {
+//        from('src/docs/asciidoc') {
+//            include 'images/**'
+//            include 'stylesheets/**'
+//        }
+//        from (downloadDir) {
+//            include 'reveal.js/**'
+//        }
+//        from(project(':book').file('src/front-cover')) {
+//            include 'front-cover-thumbnail.png'
+//            include 'raw-frontstrip.jpg'
+//            into 'images'
+//        }
+//    }
+//
+//    backends 'html5'
+//
+//    options template_dirs : [ revealjsTemplateDir.parentFile.absolutePath ]
+//
+//    attributes 'source-highlighter': 'coderay'
+//
+////    requires 'tilt','slim'
+////    dependsOn jrubyPrepare
+//
+//}

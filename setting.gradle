@@ -1,3 +1,5 @@
+asciidoctorVersion - '1.5.2'
+
 include 'slides'
 include 'brochure'
 include 'examples'

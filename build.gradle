@@ -1,0 +1,46 @@
+
+allprojects {
+    version = '0.9'
+
+    ext {
+        groovyVersion          = '2.4.5'
+        gradleVersion          = gradle.gradleVersion
+        revealjsVersion        = 'master'
+        revealjsBackendVersion = 'master'
+        revealjsBackendUrl     = 'http://github.com/ysb33r/asciidoctor-reveal.js'
+    }
+}
+
+subprojects {
+
+}
+
+
+
+task publishDist( type : Zip ) {
+    description 'Creates distribution for training'
+
+    inputs.properties repoDir : "${project(':downloadBinaries').projectDir}/repo/"
+    // TODO: Slides & Training web pages
+    // TODO: Examples
+    // TODO: Off-line Repository
+    // TODO: Distributions for Packages + Docs
+
+    dependsOn ':downloadBinaries:download'
+
+    destinationDir buildDir
+    baseName 'FastTrackJvm'
+
+    from zipTree("${inputs.properties.repoDir}/gradle/gradle-${gradleVersion}-all.zip"), {
+        into 'gradle'
+    }
+
+    from zipTree("${inputs.properties.repoDir}/groovy/apache-groovy-binary-${groovyVersion}.zip"), {
+        into 'groovy'
+    }
+
+    from zipTree("${inputs.properties.repoDir}/groovy/apache-groovy-docs-${groovyVersion}.zip"), {
+        into 'groovy'
+    }
+}
+

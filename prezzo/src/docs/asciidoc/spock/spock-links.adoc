@@ -1,0 +1,7 @@
+== Spock Framework
+
+* Spock Framework:
+** http://spockframework.github.io/spock/docs/1.0/index.html
+
+* Spock Reports
+** https://github.com/renatoathaydes/spock-reports

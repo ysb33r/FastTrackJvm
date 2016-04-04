@@ -1,0 +1,16 @@
+= Learning Groovy
+Schalk W. Cronjé
+:sessiondir: ../sessions
+
+== About the Trainers
+
+== About the Materials
+
+All materials are on the USB that has been supplied to you.
+
+
+
+== Session One
+
+Please open link:{sessiondir}/ftjd-session-one.html[Session One]
+
