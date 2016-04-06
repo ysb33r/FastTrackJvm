@@ -1,6 +1,6 @@
 == What is this evil?
 
-* Underlying language is Groovy
+* Underlying language is (Apache) Groovy
 * You don't need to be a Groovy expert to be a power user of many of these tools.
 * Groovy doesn't need `;` in most cases
 * Groovy does more with less punctuation, making it an ideal choice for a DSL
@@ -82,12 +82,13 @@ project.with {
 === Lists in Groovy
 
 * Lists in Groovy are simple too
+
 [source,groovy]
 ----
-def myList = [ 'clone', ''http://github.com/ysb33r/GradleLectures' ]
+def myList = [ 'clone', 'http://github.com/ysb33r/GradleLectures' ]
 ----
 
-* This makes it possible wirte a method call as
+* This makes it possible write a method call as
 
 [source,groovy]
 ----
@@ -124,7 +125,7 @@ bar.doSomething {
 
 === More Closure Magic
 
-If a Groovy class has a method 'call(Closure)`, the object can be passed a closure directly.
+If a Groovy class has a method `call(Closure)`, the object can be passed a closure directly.
 
 [source,groovy]
 ----

@@ -1,0 +1,18 @@
+== Ratpack's TestHttpClient
+
+* Can be used standalone
+* Use maven coordinates:
+** `io.ratpack:ratpack-test:1.2.0`
+
+
+== Ratpack's TestHttpClient
+
+[source,groovy]
+----
+include::{srctestdir}/httpserver/SimpleHttpServerSpec.groovy[tags=testhttpclient_setup,indent=0]
+----
+
+[source,groovy]
+----
+include::{srctestdir}/httpserver/SimpleHttpServerSpec.groovy[tags=testhttpclient_post,indent=0]
+----

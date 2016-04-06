@@ -12,7 +12,9 @@ allprojects {
 }
 
 subprojects {
-
+    repositories {
+        jcenter()
+    }
 }
 
 

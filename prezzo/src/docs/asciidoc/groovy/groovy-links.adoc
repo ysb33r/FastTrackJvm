@@ -1,0 +1,10 @@
+== Apache Groovy
+
+* Apache Groovy home
+** http://groovy-lang.org/
+
+* Documentation
+** http://groovy-lang.org/documentation.html
+
+* Twitter
+** @ApacheGroovy

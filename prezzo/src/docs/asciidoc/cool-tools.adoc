@@ -13,7 +13,7 @@
 :icons: font
 :srcmaindir: ../../../main/groovy/fasttrackjvm
 :srctestdir: ../../../test/groovy/fasttrackjvm
-:projectdir: ../../../..
+:prezzodir: ../../../..
 coderay-css: stylesheets/asciidoctor-coderay.css
 
 == About me
@@ -23,7 +23,12 @@ coderay-css: stylesheets/asciidoctor-coderay.css
 
 image::images/SchalkPanarama.jpg[]
 
-// == Unit testing
+== Technical Tester
+
+* Work on coding skills
+* Think
+* Be open-minded
+* Testing is even more important that development.
 
 // Spock
 include::spock/spock-intro.adoc[]
@@ -31,6 +36,15 @@ include::spock/spock-intro.adoc[]
 include::spock/spock-links.adoc[leveloffset=+1]
 
 // Groovy
+include::groovy/groovy-intro.adoc[]
+
+// TestHttpClient
+include::ratpack/http-testing.adoc[]
+
+include::ratpack/ratpack-intro.adoc[leveloffset=+1]
+
+include::ratpack/ratpack-test-links.adoc[leveloffset=+1]
+
 // Geb
 // Betamax
 // Gradle
@@ -54,3 +68,4 @@ include::spock/spock-links.adoc[leveloffset=+1]
 ** Gradle
 ** gradle-asciidoctor-plugin
 ** gradle-vfs-plugin
+* All code snippets tested as part of build

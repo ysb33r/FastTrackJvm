@@ -1,0 +1,17 @@
+== Quick HTTP Testing
+
+image::images/spock-report-testhttpclient.png[822x392]
+
+=== Quick HTTP Testing
+
+* Quickly point to a remote or in-process server
+* Build payload in a simplistic manner
+* Execute the verb
+* Check the response in a readable manner
+
+=== Quick HTTP Testing
+
+[source,groovy]
+----
+include::{srctestdir}/httpserver/SimpleHttpServerSpec.groovy[tags=testhttpclient_post,indent=0]
+----

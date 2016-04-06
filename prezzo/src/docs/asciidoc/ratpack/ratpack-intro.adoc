@@ -1,0 +1,9 @@
+== {nbsp}
+
+image::images/ratpackfw-logo.png[]
+
+=== Ratpack Framework
+
+* Set of Java libraries for building modern HTTP applications.
+* Built on Java 8, Netty and reactive principles.
+* Groovy syntax for those who prefer it.
