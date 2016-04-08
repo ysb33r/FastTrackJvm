@@ -11,10 +11,10 @@ import groovy.transform.CompileStatic
 class Handler implements HttpHandler {
     @Override
     void handle(HttpExchange httpExchange) throws IOException {
-        String response = "You said: ${httpExchange.requestBody}"
+        Byte[] response = "You said: ${httpExchange.requestBody}".bytes
         httpExchange.sendResponseHeaders(200, response.size())
 
-        httpExchange.responseBody.withWriter { w ->
+        httpExchange.responseBody.withStream { w ->
             w << response
         }
     }

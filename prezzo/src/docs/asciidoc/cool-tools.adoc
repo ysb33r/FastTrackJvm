@@ -41,13 +41,25 @@ include::groovy/groovy-intro.adoc[]
 // TestHttpClient
 include::ratpack/http-testing.adoc[]
 
-include::ratpack/ratpack-intro.adoc[leveloffset=+1]
+include::ratpack/ratpack-intro.adoc[]
 
 include::ratpack/ratpack-test-links.adoc[leveloffset=+1]
 
-// Geb
 // Betamax
+
+include::betamax/offline-api-testing.adoc[]
+
+include::betamax/betamax-intro.adoc[leveloffset=+1]
+
+// Geb
 // Gradle
+
+== Tie it together
+
+* Automation is very important for effectiveness and time-to-market
+* Ability to run all tests locally, under CI and under special environments
+* Modern testers needs to know about deployment
+
 // Docker for everything ?
 
 == Demo
@@ -57,7 +69,7 @@ include::ratpack/ratpack-test-links.adoc[leveloffset=+1]
 * Betamax
 * Geb
 * Gradle
-* Ratpack
+* Ratpack (TestHttpClient)
 * Spock Framework
 
 == About this presentation
@@ -69,3 +81,12 @@ include::ratpack/ratpack-test-links.adoc[leveloffset=+1]
 ** gradle-asciidoctor-plugin
 ** gradle-vfs-plugin
 * All code snippets tested as part of build
+
+== Thank you धन्यवाद
+
+Schalk Cronjé
+
+ysb33r@gmail.com
+
+@ysb33r
+

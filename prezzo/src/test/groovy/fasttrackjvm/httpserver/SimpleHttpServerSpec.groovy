@@ -37,7 +37,7 @@ class SimpleHttpServerSpec extends Specification {
     def "The echo path should return what is send to it"() {
         given: "A simple text request"
         requestSpec { pay ->
-            pay.body.type(MediaType.PLAIN_TEXT_UTF8).text('Hello, World')
+              pay.body.type(MediaType.PLAIN_TEXT_UTF8).text('नमस्ते दुनिया')
         }
 
         when: "The data is posted"
@@ -45,7 +45,7 @@ class SimpleHttpServerSpec extends Specification {
 
         then: "It should be echoed back"
         response.statusCode == 200
-        response.body.text == 'You said: Hello, World'
+        response.body.text == 'You said: नमस्ते दुनिया'
     }
     // end::testhttpclient_post[]
 

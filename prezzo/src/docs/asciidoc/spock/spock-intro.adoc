@@ -40,12 +40,17 @@ image::images/failed-spock-test-report-2.png[938x600]
 
 [source,groovy]
 ----
-include::{srctestdir}/calculator/CalculatorSpec.groovy[tags=exception_spock]
+include::{srctestdir}/calculator/CalculatorSpec.groovy[tags=exception_spock,indent=0]
 ----
 
 === Mock out interfaces
 
+[source,java]
+----
+include::{srcmaindir}/calculator/RemoteCalculator.java[tags=interface_spock,indent=0]
+----
+
 [source,groovy]
 ----
-include::{srctestdir}/calculator/CalculatorSpec.groovy[tags=interface_spock]
+include::{srctestdir}/calculator/CalculatorSpec.groovy[tags=interface_spock,indent=0]
 ----

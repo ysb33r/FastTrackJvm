@@ -23,12 +23,12 @@ apply plugin : 'org.ysb33r.vfs'
 apply plugin : 'com.github.jruby-gradle.base'
 
 ext {
-    downloadDir = new File(buildDir,'download')
+    downloadDir = new File(buildDir, 'download')
 
     revealjsVersion = 'master'
     revealjsTemplateVersion = 'master'
-    revealjsDir = new File(downloadDir,'reveal.js')
-    revealjsTemplateDir = new File(downloadDir,'revealjs-backends/revealjs')
+    revealjsDir = new File(downloadDir, 'reveal.js')
+    revealjsTemplateDir = new File(downloadDir, 'revealjs-backends/revealjs')
 
     examplesDir = file("${buildDir}/examples")
 
@@ -36,11 +36,43 @@ ext {
     spockVer = '1.0-groovy-2.4'
 }
 
+ext {
+    tapeDir = file('src/betamaxTest/resources/betamax/tapes')
+}
+
+sourceSets {
+    betamaxTest {
+        groovy {
+            compileClasspath += main.output + test.output
+            runtimeClasspath += main.output + test.output
+            srcDir file('src/betamaxTest/groovy')
+        }
+        resources.srcDir file('src/betamaxTest/resources')
+    }
+}
+
+configurations {
+    betamaxTestCompile.extendsFrom testCompile
+    betamaxTestRuntime.extendsFrom testRuntime
+}
+
+task betamaxTest(type: Test) {
+    testClassesDir = sourceSets.betamaxTest.output.classesDir
+    classpath = sourceSets.betamaxTest.runtimeClasspath
+}
+
+check.dependsOn betamaxTest
 
 dependencies {
     compile "org.codehaus.groovy:groovy-all:${groovyVer}"
     compile 'org.nanohttpd:nanohttpd:2.3.0'
+    compile "org.codehaus.groovy.modules.http-builder:http-builder:0.7.1", {
+        exclude module : 'groovy-all'
+    }
     testCompile "org.spockframework:spock-core:${spockVer}", {
+        exclude module : 'groovy-all'
+    }
+    betamaxTestCompile "org.spockframework:spock-core:${spockVer}", {
         exclude module : 'groovy-all'
     }
     // tag::spockreports[]
@@ -53,6 +85,18 @@ dependencies {
     // tag::ratpacktest[]
     testCompile 'io.ratpack:ratpack-test:1.2.0'
     // end::ratpacktest[]
+    // tag::betamax[]
+    betamaxTestCompile 'software.betamax:betamax-junit:2.0.0-alpha-1'
+    // end::betamax[]
+
+}
+
+betamaxTest {
+    systemProperties 'BETAMAX_TAPEDIR' : tapeDir.absolutePath
+    systemProperties 'BETAMAX_PROXYPORT' : 55555
+
+    systemProperties 'BINTRAY_USERNAME' : project.properties.bintrayUserName
+    systemProperties 'BINTRAY_APIKEY'   : project.properties.bintrayApiKey
 }
 
 task download << {

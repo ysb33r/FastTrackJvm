@@ -1,0 +1,6 @@
+== Offline API Testing
+
+* Sometimes you simply have to use a live site for testing
+* Mocking & stubbing simply not good enough
+* Need live data
+* Do not want to overload service with unnecessary test data

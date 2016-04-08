@@ -1,7 +1,7 @@
 package fasttrackjvm.calculator;
 
-// tag::spock_interface[]
+// tag::interface_spock[]
 public interface RemoteCalculator {
     public Number plus(Number... args);
 }
-// end::spock_interface[]
+// end::interface_spock[]

@@ -15,3 +15,8 @@ image::images/spock-report-testhttpclient.png[822x392]
 ----
 include::{srctestdir}/httpserver/SimpleHttpServerSpec.groovy[tags=testhttpclient_post,indent=0]
 ----
+
+[NOTE.speaker]
+--
+Namaste dunya
+--
