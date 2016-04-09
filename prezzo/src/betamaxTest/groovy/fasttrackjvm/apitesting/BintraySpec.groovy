@@ -16,6 +16,7 @@ class BintraySpec extends Specification {
 
     static final String BINTRAY_USERNAME = System.getProperty('BINTRAY_USERNAME') ?: 'fakeBintrayUser'
     static final String BINTRAY_APIKEY   = System.getProperty('BINTRAY_APIKEY')   ?: 'fakeBintrayApiKey'
+    static final String REPO_ROOT = '/packages/ysb33r/grysb33r'
 
     @Shared ProxyConfiguration configuration = ProxyConfiguration.builder().
         tapeRoot(new File(System.getProperty('BETAMAX_TAPEDIR') ?: 'src/betamaxTest/resources/betmax/tapes')).
@@ -37,15 +38,20 @@ class BintraySpec extends Specification {
     )
 
 //    @Betamax(tape='files',mode=TapeMode.READ_WRITE)
+    // tag::betamax_test[]
     @Betamax(tape='files')
     def "Source jar must be posted"() {
-        given: "A publication has been made"
-        assert client != null
 
-        when: 'The list of files is requested from the repository'
-        def list = get path : '/packages/ysb33r/grysb33r/bintray-gradle-plugin/files'
+        given: 'The list of files is requested from the repository'
+        def list =
+            get path : "${REPO_ROOT}/bintray-gradle-plugin/files"
 
-        then: 'The bintray source jar should be included'
-        list?.find { it?.path == 'org.ysb33r.gradle/bintray/0.0.5/bintray-0.0.5-sources.jar'}
+        expect: 'The bintray source jar should be included'
+        list?.find {
+            it?.path ==
+                'org.ysb33r.gradle/bintray/0.0.5/bintray-0.0.5-sources.jar'
+        }
+
     }
+    // end::betamax_test[]
 }

@@ -13,6 +13,7 @@
 :icons: font
 :srcmaindir: ../../../main/groovy/fasttrackjvm
 :srctestdir: ../../../test/groovy/fasttrackjvm
+:srcbetamaxdir:  ../../../betamaxTest/groovy/fasttrackjvm
 :prezzodir: ../../../..
 coderay-css: stylesheets/asciidoctor-coderay.css
 
@@ -49,7 +50,9 @@ include::ratpack/ratpack-test-links.adoc[leveloffset=+1]
 
 include::betamax/offline-api-testing.adoc[]
 
-include::betamax/betamax-intro.adoc[leveloffset=+1]
+include::betamax/betamax-intro.adoc[]
+
+include::betamax/betamax-links.adoc[leveloffset=+1]
 
 // Geb
 // Gradle

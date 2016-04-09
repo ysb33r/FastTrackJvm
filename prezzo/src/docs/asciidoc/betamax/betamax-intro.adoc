@@ -1,7 +1,31 @@
 == {nbsp}
 
-=== βetamax
+image::images/betamax.png[]
 
-== Betamax
+=== Betamax
 
 * Allows record & playpack
+* Mocks external HTTP resources
+** Web services
+** REST APIs
+* Stores recordings in YAML
+** Easy to edit
+** Commit to source control
+** Remember to sanitize auth credentials!
+
+=== Demo
+
+image::images/betamax-yaml.png[]
+
+=== Create Recorder
+
+[source,groovy]
+----
+@Shared ProxyConfiguration configuration = ProxyConfiguration.builder().
+    tapeRoot(new File('/path/to/tapes')).
+    ignoreLocalhost(false).
+    sslEnabled(true).
+    build()
+
+@Rule RecorderRule recorder = new RecorderRule(configuration)
+----

@@ -4,3 +4,11 @@
 * Mocking & stubbing simply not good enough
 * Need live data
 * Do not want to overload service with unnecessary test data
+* Want to test offline
+
+=== Offline API Testing
+
+[source,groovy]
+----
+include::{srcbetamaxdir}/apitesting/BintraySpec.groovy[tags=betamax_test,indent=0]
+----
