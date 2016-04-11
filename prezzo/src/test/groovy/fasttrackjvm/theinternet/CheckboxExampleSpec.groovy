@@ -12,15 +12,6 @@ class CheckboxExampleSpec extends GebSpec {
 // end::gebspec[]
 
     static final String webroot = "http://the-internet.herokuapp.com/"
-//    static final String webroot = "http://localhost:4567"
-
-//    @Shared
-//    @AutoCleanup("stop")
-//    TestableWebServer server = new TestableWebServer()
-//
-//    void setupSpec() {
-//        server.start()
-//    }
 
     // tag::gebspec_checkboxes[]
     def "Learn about testing checkboxes"() {

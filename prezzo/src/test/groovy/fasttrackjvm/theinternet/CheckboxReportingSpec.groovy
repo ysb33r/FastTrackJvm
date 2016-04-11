@@ -2,21 +2,15 @@ package fasttrackjvm.theinternet
 
 import geb.spock.GebReportingSpec
 import org.openqa.selenium.By
+import org.ysb33r.theinternet.TestableWebServer
+import spock.lang.AutoCleanup
+import spock.lang.Shared
 
 // tag::gebspec[]
 class CheckboxReportingSpec extends GebReportingSpec {
 // end::gebspec[]
 
-    static final String webroot = "http://the-internet.herokuapp.com/"
-//    static final String webroot = "http://localhost:4567"
-
-//    @Shared
-//    @AutoCleanup("stop")
-//    TestableWebServer server = new TestableWebServer()
-//
-//    void setupSpec() {
-//        server.start()
-//    }
+    static final String webroot = "http://the-internet.herokuapp.com"
 
     // tag::gebspec_checkboxes[]
     def 'Learn about testing checkboxes'() {

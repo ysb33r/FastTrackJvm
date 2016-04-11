@@ -94,7 +94,7 @@ dependencies {
     betamaxTestCompile 'software.betamax:betamax-junit:2.0.0-alpha-1'
     // end::betamax[]
 
-    testCompile 'org.ysb33r.testables:theinternet-webtest:0.49.1-SNAPSHOT'
+    testCompile 'org.ysb33r.testables:theinternet-webtest:0.49.1-r1-SNAPSHOT'
     // tag::geb[]
     testCompile "org.gebish:geb-spock:0.13.0"
     testCompile "com.machinepublishers:jbrowserdriver:0.10.4"
