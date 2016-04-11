@@ -1,0 +1,17 @@
+== Website Testing
+
+* One of the most predominant area of testing of this decade
+* Test-driven webpage development is less effort in long run
+* Selenium is the leading tool
+* Selenium tests can be overly verbose
+
+=== Trivial Test Example
+
+image::images/geb-test-page1.png[]
+
+[source,groovy]
+----
+include::{srctestdir}/theinternet/CheckboxExampleSpec.groovy[tags=gebspec_checkboxes,indent=0]
+----
+
+

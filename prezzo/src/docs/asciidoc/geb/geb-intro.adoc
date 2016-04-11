@@ -1,0 +1,34 @@
+== {nbsp}
+
+image::images/geb-logo.svg[link=https://github.com/geb/geb/blob/master/logo.svg]
+
+=== Geb
+
+* Integrates with
+** Spock Framework
+** JUnit
+** TestNG
+** Cucumber-JVM
+* Makes Selenium readable
+** Anything you can do in Selenium you can do in Geb
+
+=== Trivial Test Example Complete
+
+[source,groovy]
+----
+include::{srctestdir}/theinternet/CheckboxExampleSpec.groovy[tags="gebspec,gebspec_checkboxes"]
+----
+
+=== Grabbing Screenshots
+
+[source,groovy]
+----
+include::{srctestdir}/theinternet/CheckboxReportingSpec.groovy[tags="gebspec,gebspec_checkboxes"]
+----
+
+* Keep record during test
+* Stores HTML & PNG.
+
+=== Grabbing Screenshots
+
+image::images/geb-report-screenshot-example.png["Geb screenshot example",link=http://the-internet.herokuapp.com]

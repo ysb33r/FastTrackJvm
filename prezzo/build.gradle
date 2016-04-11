@@ -22,6 +22,7 @@ apply plugin : 'org.asciidoctor.convert'
 apply plugin : 'org.ysb33r.vfs'
 apply plugin : 'com.github.jruby-gradle.base'
 
+
 ext {
     downloadDir = new File(buildDir, 'download')
 
@@ -63,6 +64,10 @@ task betamaxTest(type: Test) {
 
 check.dependsOn betamaxTest
 
+repositories {
+    mavenLocal()
+}
+
 dependencies {
     compile "org.codehaus.groovy:groovy-all:${groovyVer}"
     compile 'org.nanohttpd:nanohttpd:2.3.0'
@@ -89,6 +94,17 @@ dependencies {
     betamaxTestCompile 'software.betamax:betamax-junit:2.0.0-alpha-1'
     // end::betamax[]
 
+    testCompile 'org.ysb33r.testables:theinternet-webtest:0.49.1-SNAPSHOT'
+    // tag::geb[]
+    testCompile "org.gebish:geb-spock:0.13.0"
+    testCompile "com.machinepublishers:jbrowserdriver:0.10.4"
+    testRuntime "org.seleniumhq.selenium:selenium-support:2.53.0"
+    testRuntime "org.seleniumhq.selenium:selenium-firefox-driver:2.53.0"
+    // end::geb[]
+}
+
+test {
+    systemProperties "geb.build.reportsDir": "$reportsDir/geb"
 }
 
 betamaxTest {

@@ -5,7 +5,7 @@
 :docinfo2:
 :revealjs_keyboard: true
 :revealjs_overview: true
-:revealjs_theme: beige
+:revealjs_theme: solarized
 :revealjs_controls: true
 :revealjs_history: true
 :revealjs_slideNumber : true
@@ -55,6 +55,13 @@ include::betamax/betamax-intro.adoc[]
 include::betamax/betamax-links.adoc[leveloffset=+1]
 
 // Geb
+
+include::geb/website-testing.adoc[]
+
+include::geb/geb-intro.adoc[]
+
+include::geb/geb-links.adoc[leveloffset=+1]
+
 // Gradle
 
 == Tie it together
@@ -62,8 +69,6 @@ include::betamax/betamax-links.adoc[leveloffset=+1]
 * Automation is very important for effectiveness and time-to-market
 * Ability to run all tests locally, under CI and under special environments
 * Modern testers needs to know about deployment
-
-// Docker for everything ?
 
 == Demo
 
