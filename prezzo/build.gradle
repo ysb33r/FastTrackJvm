@@ -97,7 +97,7 @@ dependencies {
     testCompile 'org.ysb33r.testables:theinternet-webtest:0.49.1-r1-SNAPSHOT'
     // tag::geb[]
     testCompile "org.gebish:geb-spock:0.13.0"
-    testCompile "com.machinepublishers:jbrowserdriver:0.10.4"
+    testCompile "org.seleniumhq.selenium:selenium-api:2.53.0"
     testRuntime "org.seleniumhq.selenium:selenium-support:2.53.0"
     testRuntime "org.seleniumhq.selenium:selenium-firefox-driver:2.53.0"
     // end::geb[]

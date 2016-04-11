@@ -70,6 +70,8 @@ include::geb/geb-links.adoc[leveloffset=+1]
 * Ability to run all tests locally, under CI and under special environments
 * Modern testers needs to know about deployment
 
+include::gradle/gradle-intro.adoc[]
+
 == Demo
 
 == Today's Cool Tools
