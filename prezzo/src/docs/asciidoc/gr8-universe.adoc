@@ -60,11 +60,11 @@ include::gradle/dsl1.adoc[]
 
 include::gradle/dsl2.adoc[]
 
-//include::gradle/tasks.adoc[]
-//
+include::gradle/tasks.adoc[leveloffset=+1]
 
 include::cpp/cpp.adoc[leveloffset=+1]
-//include::gradle/gradle-links.adoc[]
+
+include::gradle/gradle-links.adoc[leveloffset=+1]
 
 // Spock
 include::spock/spock-intro.adoc[]
@@ -72,7 +72,22 @@ include::spock/spock-intro.adoc[]
 include::spock/spock-links.adoc[leveloffset=+1]
 
 // Geb
+
+include::geb/website-testing.adoc[]
+
+include::geb/geb-intro.adoc[]
+
+include::geb/geb-links.adoc[leveloffset=+1]
+
 // Ratpack
+
+include::ratpack/ratpack-intro.adoc[]
+
+include::ratpack/groovy-script.adoc[leveloffset=+1]
+
+include::ratpack/ratpack-test-links.adoc[leveloffset=+1]
+
+include::ratpack/http-testing.adoc[]
 
 // Bits & pieces
 // - Grails

@@ -1,0 +1,6 @@
+== Ratpack Quickstart Server
+
+[source,groovy]
+----
+include::{examplesdir}/ratpack-groovy/simple-groovy-script.groovy[]
+----

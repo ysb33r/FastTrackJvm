@@ -5,14 +5,19 @@ Can be based upon a task type
 
 [source,groovy]
 ----
-include::{snippets}/task1.gradle[]
+task runSomething ( type : Exec ) {
+    command 'git'
+    args 'clone', 'https://bitbucket.com/ysb33r/GradleWorkshop'
+}
 ----
 
 Can be free-form
 
 [source,groovy]
 ----
-include::{snippets}/task2.gradle[indent=0]
+task hellowWorld << {
+  println 'Hello, world'
+}
 ----
 
 === Gradle Tasks : Configuration vs Action
