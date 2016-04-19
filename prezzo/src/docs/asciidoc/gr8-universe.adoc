@@ -66,6 +66,12 @@ include::cpp/cpp.adoc[leveloffset=+1]
 
 include::gradle/gradle-links.adoc[leveloffset=+1]
 
+== {nbsp}
+
+image::images/idiomaticgradlevol1.png[height=30%,width=30%]
+
+http://leanpub.com/idiomaticgradle
+
 // Spock
 include::spock/spock-intro.adoc[]
 
