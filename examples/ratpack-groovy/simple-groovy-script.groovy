@@ -7,10 +7,10 @@ import static ratpack.groovy.Groovy.ratpack
 ratpack {
     handlers {
         get {
-            render "Hello World!"
+            render "Hello World!\n\n"
         }
         get(":name") {
-            render "Hello $pathTokens.name!"
+            render "Hello $pathTokens.name!\n\n"
         }
     }
 }

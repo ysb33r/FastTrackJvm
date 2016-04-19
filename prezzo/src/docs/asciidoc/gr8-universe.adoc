@@ -87,14 +87,16 @@ include::ratpack/groovy-script.adoc[leveloffset=+1]
 
 include::ratpack/ratpack-test-links.adoc[leveloffset=+1]
 
-include::ratpack/http-testing.adoc[]
+//include::ratpack/http-testing.adoc[leveloffset=+1]
 
-// Bits & pieces
-// - Grails
-// - Griffon
-// - Grooscript
-// - VFS
-// - Sshoogr
+== Other Gr8-Universe Tools
+
+* *Grails* - Build web applications fast
+* *Griffon* - Best way to build desktop apps
+* *Grooscript* - Groovy to Javascript
+* *Groovy VFS* - File operations on remote servers using variety of protocols
+* *Sshoogr* - SSH & SCP
+* *Groowin* - WinRM
 
 == Thank you
 
@@ -104,12 +106,59 @@ Email: ysb33r@gmail.com
 
 Twitter: @ysb33r
 
-image:images/ratpackfw-logo.png[height=20%,width=20%]
-image:images/groovyduke.jpg[height=20%,width=20%]
+include::gr8-universe-logos.adoc[]
 
-image:images/gradle-logo.png[height=20%,width=20%]
-image:images/geb-logo.svg[height=20%,width=20%]
-image:images/sdkman-logo.png[height=20%,width=20%]
+== Bits & pieces
+
+include::gr8-universe-logos.adoc[]
+
+== Groovy VFS
+
+[source,groovy]
+----
+def vfs = new VFS()
+
+vfs {
+  cp 'ftp://some.server/pub/file0.txt?vfs.ftp.passiveMode=1',
+    'sftp://user:pass@another.server/path/file1.txt',
+      overwrite : true
+}
+----
+
+https://github.com/ysb33r/groovy-vfs
+
+== Sshoogr
+
+[source,groovy]
+----
+remoteSession('user:pass@another.server') {
+  exec 'rm -rf ~/tmp/*'
+  exec 'touch this.file'
+  remoteFile('this.file').text = "enabled=true"
+}
+----
+
+https://github.com/aestasit/sshoogr
+
+== Grooscript
+
+image::images/grooscript-logo.png[]
+
+// [source,groovy]
+// ----
+// ----
+
+http://grooscript.org/
+
+== Thank you
+
+Schalk W. Cronjé
+
+Email: ysb33r@gmail.com
+
+Twitter: @ysb33r
+
+include::gr8-universe-logos.adoc[]
 
 == About this presentation
 
