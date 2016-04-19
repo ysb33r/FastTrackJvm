@@ -20,7 +20,7 @@ repositories {
 
 dependencies {
     testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
-include::{prezzodir}/build.gradle[tags=geb]
+include::{projectdir}/../build.gradle[tags=geb]
 }
 ----
 

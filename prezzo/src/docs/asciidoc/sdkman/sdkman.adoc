@@ -1,0 +1,27 @@
+== {nbsp}
+
+image::images/sdkman-logo.png[]
+
+=== SdkMan
+
+* Manages parallel version of multiple SDKs
+* Mostly for (but not limited to) JVM-related systems
+* Windows users can use Posh-GVM (Powershell)
+** Windows 10 Bash ??
+
+[source,bash]
+----
+curl -s http://get.sdkman.io | bash
+----
+
+=== SdkMan Demo
+
+image::images/sdkman-help.png[width=70%,height=70%]
+
+=== {nbsp}
+
+image:images/sdkman-logo.png[width=40%,height=40%]
+
+* *SdkMan*: http://sdkman.io
+* *Posh-GVM*: https://github.com/flofreud/posh-gvm
+* @sdkmanager

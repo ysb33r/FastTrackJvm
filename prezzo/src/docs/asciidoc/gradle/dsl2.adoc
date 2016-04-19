@@ -1,0 +1,22 @@
+
+=== Buildscript
+
+* The `buildscript` closure is special
+* It tells Gradle what to load into the classpath before evaluating the script itself.
+* It also tells it where to look for those dependencies.
+* Even though Gradle 2.1 has added a new way of adding external plugins, `buildscript` are
+  much more flexible.
+
+=== Extensions
+
+* Extensions are global configuration blocks added by plugins.
+* Example: The `jruby-gradle-base` plugin will add a `jruby` block.
+
+[source,groovy]
+----
+apply plugin: 'com.github.jruby-gradle.base'
+
+jruby {
+  defaultVersion = '1.7.11'
+}
+----

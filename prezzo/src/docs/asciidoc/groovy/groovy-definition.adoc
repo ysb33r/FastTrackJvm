@@ -1,0 +1,6 @@
+== Apache Groovy
+
+A dynamic & static typed language for the JVM with REPL capability.
+
+image::images/groovyduke.jpg[link="https://github.com/groovy/artwork/blob/master/groovyduke.jpg",width=200px,height=200px]
+

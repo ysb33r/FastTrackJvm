@@ -1,0 +1,48 @@
+== Smooth Operator: Elvis
+
+`?:`
+
+[source,groovy]
+----
+// Selecting a default value if variable is not set
+
+String a
+String b = 'def'
+
+// Prints 'foo'
+println a ?: 'foo'
+
+// Print 'def'
+println b ?: 'foo'
+----
+
+== Smooth Operator: Safe Navigation
+
+`?.`
+
+[source,groovy]
+----
+// Returns a value if not-null, otherwise null
+
+String a
+String b = 'def'
+
+assert a?.size() == null
+
+assert b?.size() == 3
+
+println a.size() // Throws NPE
+----
+
+== Smooth Operator: Spread
+
+`*.`
+
+[source,groovy]
+----
+// Apply operation to each member in collection
+
+def a = [ 'a','bb','c' ]
+
+assert a*.size() == [ 1,2,1 ]
+----

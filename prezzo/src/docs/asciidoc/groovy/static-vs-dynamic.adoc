@@ -1,0 +1,17 @@
+=== Static vs Dynamic
+
+* By default code in Groovy is compiled with dynamic typing.
+* Typing can be modifed by selective application of annotations:
+** `@CompileStatic` - compile static typing
+** `@CompileDynamic` - compile dynamic typing
+** `@TypeChecked` - compile dynamic, but check types
+* Apply to classes & methods.
+
+=== Is Groovy Slower than Java?
+
+* Yes and No.
+* Context is critical
+** Russell Winder has done number of experiments
+* JSON parsing in Groovy is faster than Java.
+* Develop first, measure, then optimise!
+** Remember C++ -> C -> Assembler optimisation?

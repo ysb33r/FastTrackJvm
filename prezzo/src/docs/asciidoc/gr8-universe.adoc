@@ -2,18 +2,21 @@
 :author: Schalk W. Cronjé
 :email: ysb33r@gmail.com
 :twitter: @ysb33r
-:docinfo1:
+:docinfo2:
 :revealjs_keyboard: true
 :revealjs_overview: true
 :revealjs_theme: beige
-:revealjs_controls: false
+:revealjs_controls: true
 :revealjs_history: true
 :revealjs_slideNumber : true
 :revealjs_center: false
 :icons: font
+:srcdir: ../../..
+:buildfile: ../../../../build.gradle
 :srcmaindir: ../../../main/groovy/fasttrackjvm
 :srctestdir: ../../../test/groovy/fasttrackjvm
 :projectdir: ../../../..
+:examplesdir: {projectdir}/../../examples
 coderay-css: stylesheets/asciidoctor-coderay.css
 
 == About me
@@ -23,23 +26,75 @@ coderay-css: stylesheets/asciidoctor-coderay.css
 
 image::images/SchalkPanarama.jpg[]
 
+// 90 min:
+//   0 : Intro (5)
+//   5 : SDKMan (5)
+//   10 : Groovy (15)
+//   25 : Gradle (15)
+//   40 : Spock (15)
+//   55 : Geb (10)
+//   65 : Ratpack (10)
+//   75 : Bit & pieces (10)
+//   85 : Q & A (5)
+
+include::sdkman/sdkman.adoc[]
+
 // Groovy
+include::groovy/groovy-definition.adoc[]
 
-== {nbsp}
+include::groovy/groovy-intro-detailed.adoc[]
 
-image::images/groovyduke.jpg[link="https://github.com/groovy/artwork/blob/master/groovyduke.jpg"]
+include::groovy/smooth-operator.adoc[leveloffset=+1]
+
+include::groovy/static-vs-dynamic.adoc[]
+
+include::groovy/groovy-links.adoc[leveloffset=+1]
 
 // Gradle
+
+include::gradle/gradle-intro.adoc[]
+
+include::gradle/thewholehog.adoc[]
+
+include::gradle/dsl1.adoc[]
+
+include::gradle/dsl2.adoc[]
+
+//include::gradle/tasks.adoc[]
+//
+
+include::cpp/cpp.adoc[leveloffset=+1]
+//include::gradle/gradle-links.adoc[]
 
 // Spock
 include::spock/spock-intro.adoc[]
 
 include::spock/spock-links.adoc[leveloffset=+1]
 
-
 // Geb
 // Ratpack
-// Grails
+
+// Bits & pieces
+// - Grails
+// - Griffon
+// - Grooscript
+// - VFS
+// - Sshoogr
+
+== Thank you
+
+Schalk W. Cronjé
+
+Email: ysb33r@gmail.com
+
+Twitter: @ysb33r
+
+image:images/ratpackfw-logo.png[height=20%,width=20%]
+image:images/groovyduke.jpg[height=20%,width=20%]
+
+image:images/gradle-logo.png[height=20%,width=20%]
+image:images/geb-logo.svg[height=20%,width=20%]
+image:images/sdkman-logo.png[height=20%,width=20%]
 
 == About this presentation
 

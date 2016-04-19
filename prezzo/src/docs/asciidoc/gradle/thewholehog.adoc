@@ -1,0 +1,13 @@
+=== Gradle JVM Polygot
+
+* Build a distributable application packaged as as ZIP
+* Runnable via shell script or batch file
+* Contains classes written Java, Groovy & Kotlin source
+* Test source code with Spock Framework
+
+=== Gradle JVM Polygot
+
+[source,groovy]
+----
+include::{examplesdir}/thewholehog/build.gradle[tags=thewholehog]
+----
