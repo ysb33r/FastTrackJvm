@@ -2,6 +2,7 @@
 
 image::images/spock-report-testhttpclient.png[822x392]
 
+// tag::gr8universe[]
 === Quick HTTP Testing
 
 * Quickly point to a remote or in-process server
@@ -20,3 +21,4 @@ include::{srctestdir}/httpserver/SimpleHttpServerSpec.groovy[tags=testhttpclient
 --
 Namaste dunya
 --
+// end::gr8universe[]

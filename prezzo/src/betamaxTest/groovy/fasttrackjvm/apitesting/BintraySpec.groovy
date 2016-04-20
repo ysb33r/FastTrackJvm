@@ -8,10 +8,6 @@ import software.betamax.junit.RecorderRule
 import spock.lang.Shared
 import spock.lang.Specification
 
-
-/**
- * @author Schalk W. Cronjé
- */
 class BintraySpec extends Specification {
 
     static final String BINTRAY_USERNAME = System.getProperty('BINTRAY_USERNAME') ?: 'fakeBintrayUser'

@@ -26,17 +26,6 @@ coderay-css: stylesheets/asciidoctor-coderay.css
 
 image::images/SchalkPanarama.jpg[]
 
-// 90 min:
-//   0 : Intro (5)
-//   5 : SDKMan (5)
-//   10 : Groovy (15)
-//   25 : Gradle (15)
-//   40 : Spock (15)
-//   55 : Geb (10)
-//   65 : Ratpack (10)
-//   75 : Bit & pieces (10)
-//   85 : Q & A (5)
-
 include::sdkman/sdkman.adoc[]
 
 // Groovy
@@ -60,7 +49,7 @@ include::gradle/dsl1.adoc[]
 
 include::gradle/dsl2.adoc[]
 
-include::gradle/tasks.adoc[leveloffset=+1]
+include::gradle/tasks.adoc[leveloffset=+1,tags=gr8universe]
 
 include::cpp/cpp.adoc[leveloffset=+1]
 
@@ -93,7 +82,7 @@ include::ratpack/groovy-script.adoc[leveloffset=+1]
 
 include::ratpack/ratpack-test-links.adoc[leveloffset=+1]
 
-//include::ratpack/http-testing.adoc[leveloffset=+1]
+include::ratpack/http-testing.adoc[tags=gr8universe]
 
 == Other Gr8-Universe Tools
 
@@ -149,10 +138,6 @@ https://github.com/aestasit/sshoogr
 == Grooscript
 
 image::images/grooscript-logo.png[]
-
-// [source,groovy]
-// ----
-// ----
 
 http://grooscript.org/
 

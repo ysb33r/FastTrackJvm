@@ -20,8 +20,10 @@ task hellowWorld << {
 }
 ----
 
+// tag::gr8universe[]
 === Gradle Tasks : Configuration vs Action
 
 * Use of `<< {}` adds action to be executed
 ** Tasks supplied by plugin will have default actions
 * Use of `{}` configures a task
+// end::gr8universe[]
