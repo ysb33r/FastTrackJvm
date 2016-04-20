@@ -1,4 +1,5 @@
 
+// tag::gr8universe[]
 == Gradle Tasks
 
 Can be based upon a task type
@@ -19,11 +20,10 @@ task hellowWorld << {
   println 'Hello, world'
 }
 ----
+// end::gr8universe[]
 
-// tag::gr8universe[]
 === Gradle Tasks : Configuration vs Action
 
 * Use of `<< {}` adds action to be executed
 ** Tasks supplied by plugin will have default actions
 * Use of `{}` configures a task
-// end::gr8universe[]
