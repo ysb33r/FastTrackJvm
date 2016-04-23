@@ -22,7 +22,7 @@ subprojects {
 task publishDist( type : Zip ) {
     description 'Creates distribution for training'
 
-    inputs.properties repoDir : "${project(':downloadBinaries').projectDir}/repo/"
+    // inputs.properties repoDir : "${project(':downloadBinaries').projectDir}/repo/"
     // TODO: Slides & Training web pages
     // TODO: Examples
     // TODO: Off-line Repository
