@@ -17,6 +17,11 @@
 :prezzodir: ../../../..
 coderay-css: stylesheets/asciidoctor-coderay.css
 
+[NOTE.speaker]
+--
+Doos(a)re din mei(n) aapka svaagat hai
+--
+
 == About me
 
 * Email: ysb33r@gmail.com
@@ -76,7 +81,21 @@ include::gradle/gradle-links.adoc[leveloffset=+1]
 
 == DEMO
 
+== {nbsp}
 
+image::images/idiomaticgradlevol1.png[height=30%,width=30%]
+
+http://leanpub.com/idiomaticgradle
+
+== About this presentation
+
+* Written in Asciidoctor ({asciidoctorj})
+* Styled by asciidoctor-revealjs extension
+* Built using:
+** Gradle
+** gradle-asciidoctor-plugin
+** gradle-vfs-plugin
+* All code snippets tested as part of build
 
 == Thank you धन्यवाद
 
@@ -93,13 +112,4 @@ image:images/betamax.png[height=20%,width=20%]
 image:images/geb-logo.svg[height=20%,width=20%]
 image:images/gradle-logo.png[height=20%,width=20%]
 
-== About this presentation
-
-* Written in Asciidoctor ({asciidoctorj})
-* Styled by asciidoctor-revealjs extension
-* Built using:
-** Gradle
-** gradle-asciidoctor-plugin
-** gradle-vfs-plugin
-* All code snippets tested as part of build
 

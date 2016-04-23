@@ -1,6 +1,7 @@
 == Quick HTTP Testing
 
-image::images/spock-report-testhttpclient.png[822x392]
+//image::images/spock-report-testhttpclient.png[822x392]
+image::images/spock-report-testhttpclient.png[1028x490]
 
 // tag::gr8universe[]
 === Quick HTTP Testing
