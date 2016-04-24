@@ -1,0 +1,4 @@
+= Requirements
+
+* JDK8 Installed
+* Text Editor (IntelliJ recommended)

@@ -1,14 +1,21 @@
 
 buildscript {
     repositories {
-        maven {
-            url "https://plugins.gradle.org/m2/"
+        if(project.properties.BUILDREPO) {
+            maven {
+                url "https://plugins.gradle.org/m2/"
+            }
+            mavenLocal()
+            jcenter()
+        } else {
+            ivy {
+                url file('../repo')
+                layout 'gradle'
+            }
         }
-        mavenLocal()
-        jcenter()
     }
     dependencies {
-        classpath "org.ysb33r.gradle:ivypot:0.3.5"
+        classpath "org.ysb33r.gradle:ivypot:0.4"
         classpath 'org.ysb33r.gradle:vfs-gradle-plugin:1.0-beta6'
         classpath 'commons-httpclient:commons-httpclient:3.1'
     }
@@ -25,7 +32,10 @@ task getGradle( type : VfsCopy ) {
     description 'Download Gradle'
     into file('repo/gradle')
     from "https://services.gradle.org/distributions/gradle-${gradleVersion}-all.zip"
-
+    outputs.upToDateWhen {
+        file("repo/gradle/gradle-${gradleVersion}-all.zip").exists()
+    }
+    onlyIf { !gradle.startParameter.isOffline() && project.properties.BUILDREPO }
 }
 
 task getGroovy( type : VfsCopy ) {
@@ -35,6 +45,13 @@ task getGroovy( type : VfsCopy ) {
     from "http://dl.bintray.com/groovy/maven/apache-groovy-docs-${groovyVersion}.zip"
 //    from "http://dl.bintray.com/groovy/maven/apache-groovy-sdk-${groovyVersion}.zip"
     from "http://dl.bintray.com/groovy/maven/apache-groovy-binary-${groovyVersion}.zip"
+
+    outputs.upToDateWhen {
+        file("repo/groovy/apache-groovy-docs-${groovyVersion}.zip").exists() &&
+            file("repo/groovy/apache-groovy-binary-${groovyVersion}.zip").exists()
+    }
+
+    onlyIf { !gradle.startParameter.isOffline() && project.properties.BUILDREPO }
 }
 
 configurations {
@@ -42,6 +59,25 @@ configurations {
 }
 
 dependencies {
+    examples 'junit:junit:4.1'
+    examples 'org.codehaus.groovy:groovy-all:2.4.3'
+    examples 'org.spockframework:spock-core:1.0-groovy-2.4'
+    examples "org.codehaus.groovy.modules.http-builder:http-builder:0.7.1", {
+        exclude module : 'groovy-all'
+    }
+    examples 'com.athaydes:spock-reports:1.2.10', {
+        transitive = false
+    }
+    examples 'org.slf4j:slf4j-api:1.7.13'
+    examples 'org.slf4j:slf4j-simple:1.7.13'
+    examples 'io.ratpack:ratpack-test:1.2.0'
+    examples 'software.betamax:betamax-junit:2.0.0-alpha-1'
+    examples 'org.ysb33r.testables:theinternet-webtest:0.49.1-r1-SNAPSHOT'
+
+    examples "org.gebish:geb-spock:0.13.0"
+    examples "org.seleniumhq.selenium:selenium-api:2.53.0"
+    examples "org.seleniumhq.selenium:selenium-support:2.53.0"
+    examples "org.seleniumhq.selenium:selenium-firefox-driver:2.53.0"
 }
 
 syncRemoteRepositories {
@@ -50,11 +86,17 @@ syncRemoteRepositories {
     repositories {
         jcenter()
         mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        mavenLocal()
     }
 
     configurations 'examples'
 
-    onlyIf { !gradle.startParameter.isOffline() }
+    onlyIf { !gradle.startParameter.isOffline() && project.properties.BUILDREPO }
+
+    includeBuildScriptDependencies = true
 }
 
 task download {
