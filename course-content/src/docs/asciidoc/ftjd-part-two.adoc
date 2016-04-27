@@ -1,0 +1,13 @@
+= Build Pipelines with Gradle
+Schalk W. Cronjé
+:toc: right
+
+== Background
+
+* Automation is very important for effectiveness and time-to-market
+* Ability to run all tests locally, under CI and under special environments
+* Modern testers needs to know about deployment
+
+include::gradle/gradle-intro.adoc[]
+
+include::gradle/gradle-links.adoc[]

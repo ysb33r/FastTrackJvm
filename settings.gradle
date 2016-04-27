@@ -1,5 +1,3 @@
-//include 'brochure'
-//include 'slides'
-//include 'examples'
+include 'course-content'
+include 'examples'
 include 'downloadBinaries'
-//include 'prezzo'

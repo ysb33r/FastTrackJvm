@@ -2,3 +2,5 @@
 
 * JDK8 Installed
 * Text Editor (IntelliJ recommended)
+* Access to:
+** http://the-internet.herokuapp.com

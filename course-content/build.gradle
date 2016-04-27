@@ -1,15 +1,12 @@
 buildscript {
     repositories {
-        jcenter()
-        maven {
-            url "https://plugins.gradle.org/m2/"
+        ivy {
+            url file('../repo')
+            layout 'gradle'
         }
     }
     dependencies {
-        classpath "org.asciidoctor:asciidoctor-gradle-plugin:1.5.2"
-        classpath "org.ysb33r.gradle:vfs-gradle-plugin:1.0-beta3"
-        classpath "com.github.jruby-gradle:jruby-gradle-plugin:1.1.4"
-        classpath "commons-httpclient:commons-httpclient:3.1"
+        classpath "org.asciidoctor:asciidoctor-gradle-plugin:1.5.3"
     }
 }
 
@@ -19,11 +16,23 @@ buildscript {
 
 apply plugin : 'org.asciidoctor.convert'
 
+ext {
+    repoDir = 'repo'
+}
+
+dependencies {
+    asciidoctor 'org.asciidoctor:asciidoctorj-groovy-dsl:1.0.0.preview2', {
+        exclude module : 'groovy-all'
+    }
+}
+
 asciidoctor {
 
+    inputs.dir 'src/docs/asciidoc'
+
     sources {
-        include 'sessions.adoc'
-        include 'ftjd-session-*.adoc'
+        include 'fast-track-jvm-development.adoc'
+        include 'ftjd-part-*.adoc'
     }
 
     resources {
@@ -36,11 +45,8 @@ asciidoctor {
     backends 'html5'
 
     attributes 'source-highlighter': 'coderay',
-        groovydir : "groovy/groovy-${groovyVer}",
-        gradledir : "gradle/gradle-${gradleVer}"
-
-//    requires 'tilt','slim'
-//    dependsOn jrubyPrepare
+        groovydir : "${repoDir}/groovy/groovy-${groovyVersion}",
+        gradledir : "${repoDir}/gradle/gradle-${gradleVersion}"
 
 }
 

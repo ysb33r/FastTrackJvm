@@ -13,7 +13,10 @@ allprojects {
 
 subprojects {
     repositories {
-        jcenter()
+        ivy {
+            url file('../repo')
+            layout 'gradle'
+        }
     }
 }
 
@@ -22,27 +25,42 @@ subprojects {
 task publishDist( type : Zip ) {
     description 'Creates distribution for training'
 
-    inputs.properties repoDir : "${project(':downloadBinaries').projectDir}/repo/"
+    ext {
+        repoDir = file('repo')
+    }
+//    inputs.properties repoDir : "${project(':downloadBinaries').projectDir}/repo/"
     // TODO: Slides & Training web pages
     // TODO: Examples
     // TODO: Off-line Repository
     // TODO: Distributions for Packages + Docs
 
     dependsOn ':downloadBinaries:download'
+    dependsOn ':course-content:asciidoctor'
 
     destinationDir buildDir
     baseName 'FastTrackJvm'
 
-    from zipTree("${inputs.properties.repoDir}/gradle/gradle-${gradleVersion}-all.zip"), {
+    from zipTree("${repoDir}/gradle/gradle-${gradleVersion}-all.zip"), {
         into 'gradle'
     }
 
-    from zipTree("${inputs.properties.repoDir}/groovy/apache-groovy-binary-${groovyVersion}.zip"), {
+    from zipTree("${repoDir}/groovy/apache-groovy-binary-${groovyVersion}.zip"), {
         into 'groovy'
     }
 
-    from zipTree("${inputs.properties.repoDir}/groovy/apache-groovy-docs-${groovyVersion}.zip"), {
+    from zipTree("${repoDir}/groovy/apache-groovy-docs-${groovyVersion}.zip"), {
         into 'groovy'
+    }
+
+    from 'repo', {
+        into 'repo'
+        exclude 'groovy/**'
+        exclude 'gradle/**'
+    }
+
+    from "${project(':course-content').buildDir}/asciidoc/html5", {
+        include '**'
+        into 'course-content'
     }
 }
 

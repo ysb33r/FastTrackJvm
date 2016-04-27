@@ -1,0 +1,42 @@
+= Learning Groovy
+Schalk W. Cronjé
+:toc: right
+
+
+
+
+== First Experiments with Groovy
+
+You don't need to be a Groovy expert to be a power user of many of these tools.
+
+
+Run the `groovyConsole` program which is available in `{groovydir}/bin` directory that comes with the course material.
+
+[sidebar]
+****
+* Groovy doesn't need `;` in most cases
+* Groovy does more with less punctuation, making it an ideal choice for a DSL
+* In most cases lines that do not end on an operator is considered a completed statement.
+****
+
+include::groovy/groovy-intro-detailed.adoc[]
+
+include::groovy/smooth-operator.adoc[]
+
+include::groovy/static-vs-dynamic.adoc[]
+
+////
+Hello World
+def
+strings ' " ''' """
+numbers default is BigInt, BigDecimal
+qualify numbers
+lists
+maps
+functional collection processing
+
+Using external libraries
+////
+
+
+

@@ -1,7 +1,7 @@
 
 buildscript {
     repositories {
-        if(project.properties.BUILDREPO) {
+        if(System.properties.BUILDREPO) {
             maven {
                 url "https://plugins.gradle.org/m2/"
             }
@@ -16,7 +16,7 @@ buildscript {
     }
     dependencies {
         classpath "org.ysb33r.gradle:ivypot:0.4"
-        classpath 'org.ysb33r.gradle:vfs-gradle-plugin:1.0-beta6'
+        classpath 'org.ysb33r.gradle:vfs-gradle-plugin:1.0-beta8'
         classpath 'commons-httpclient:commons-httpclient:3.1'
     }
 }
@@ -25,37 +25,45 @@ import org.ysb33r.gradle.vfs.tasks.VfsCopy
 
 // This can only be used whilst online
 
+ext {
+    buildingRepo = { !gradle.startParameter.isOffline() && System.properties.BUILDREPO }
+    repoDir = '../repo'
+}
+
 apply plugin : 'org.ysb33r.ivypot'
 apply plugin : 'org.ysb33r.vfs'
 
 task getGradle( type : VfsCopy ) {
     description 'Download Gradle'
-    into file('repo/gradle')
+    into file("${repoDir}/gradle")
     from "https://services.gradle.org/distributions/gradle-${gradleVersion}-all.zip"
     outputs.upToDateWhen {
-        file("repo/gradle/gradle-${gradleVersion}-all.zip").exists()
+        file("${repoDir}/gradle/gradle-${gradleVersion}-all.zip").exists()
     }
-    onlyIf { !gradle.startParameter.isOffline() && project.properties.BUILDREPO }
+    onlyIf buildingRepo
 }
 
 task getGroovy( type : VfsCopy ) {
     description 'Download Groovy'
-    into file('repo/groovy')
+    into file("${repoDir}/groovy")
 
     from "http://dl.bintray.com/groovy/maven/apache-groovy-docs-${groovyVersion}.zip"
 //    from "http://dl.bintray.com/groovy/maven/apache-groovy-sdk-${groovyVersion}.zip"
     from "http://dl.bintray.com/groovy/maven/apache-groovy-binary-${groovyVersion}.zip"
 
     outputs.upToDateWhen {
-        file("repo/groovy/apache-groovy-docs-${groovyVersion}.zip").exists() &&
-            file("repo/groovy/apache-groovy-binary-${groovyVersion}.zip").exists()
+        file("${repoDir}/groovy/apache-groovy-docs-${groovyVersion}.zip").exists() &&
+            file("${repoDir}/groovy/apache-groovy-binary-${groovyVersion}.zip").exists()
     }
 
-    onlyIf { !gradle.startParameter.isOffline() && project.properties.BUILDREPO }
+    onlyIf buildingRepo
 }
 
 configurations {
     examples
+    jruby17
+    jcommander
+    groovy18
 }
 
 dependencies {
@@ -78,10 +86,20 @@ dependencies {
     examples "org.seleniumhq.selenium:selenium-api:2.53.0"
     examples "org.seleniumhq.selenium:selenium-support:2.53.0"
     examples "org.seleniumhq.selenium:selenium-firefox-driver:2.53.0"
+
+    examples 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'
+    examples 'org.asciidoctor:asciidoctorj:1.5.3.2'
+    examples 'org.asciidoctor:asciidoctorj-groovy-dsl:1.0.0.preview2', {
+        exclude module : 'groovy-all'
+    }
+
+    jcommander 'com.beust:jcommander:1.35'
+    groovy18 'org.codehaus.groovy:groovy-all:1.8.9'
+    jruby17 'org.jruby:jruby-complete:1.7.21'
 }
 
 syncRemoteRepositories {
-    repoRoot file('repo')
+    repoRoot file("${repoDir}")
 
     repositories {
         jcenter()
@@ -92,9 +110,9 @@ syncRemoteRepositories {
         mavenLocal()
     }
 
-    configurations 'examples'
+    configurations 'examples', 'jruby17', 'jcommander','groovy18'
 
-    onlyIf { !gradle.startParameter.isOffline() && project.properties.BUILDREPO }
+    onlyIf buildingRepo
 
     includeBuildScriptDependencies = true
 }

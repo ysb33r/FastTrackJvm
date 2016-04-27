@@ -1,15 +1,16 @@
-== {nbsp}
-
 image::images/gradle-logo.png[]
 
-=== Gradle
-
+.Why Gradle
 * Very modern, next-generation build & deployment pipeline tool
 * DSL is based on Groovy
 * Vast collection of plugins
+* Make it easy to integrate development and complex testing
+* Deploy local & to remote sites via plugins
+* Use Docker local & remote
+* "I do not have means to test on my machine" becomes less of an argument.
 
-=== Gradle
 
+.Example buildscript for testing
 [source,groovy]
 ----
 apply plugin : 'groovy'
@@ -20,14 +21,8 @@ repositories {
 
 dependencies {
     testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
-include::{projectdir}/../build.gradle[tags=geb]
 }
 ----
 
-=== Gradle
 
-* Make it easy to integrate development and complex testing
-* Deploy local & to remote sites via plugins
-* Use Docker local & remote
-* "I do not have means to test on my machine" becomes less of an argument.
 
