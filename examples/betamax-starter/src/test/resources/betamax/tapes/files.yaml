@@ -1,0 +1,20 @@
+!tape
+name: files
+interactions:
+- recorded: 2016-04-28T01:56:21.481Z
+  request:
+    method: GET
+    uri: http://127.0.0.1:5050/
+    headers:
+      Accept: text/plain
+      Content-Length: '0'
+      Host: 127.0.0.1:5050
+      Proxy-Connection: Keep-Alive
+  response:
+    status: 200
+    headers:
+      connection: keep-alive
+      content-length: '14'
+      content-type: text/plain;charset=UTF-8
+    body: !!binary |-
+      SGVsbG8gV29ybGQhCgo=
