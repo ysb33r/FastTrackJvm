@@ -17,6 +17,11 @@
 :prezzodir: ../../../..
 coderay-css: stylesheets/asciidoctor-coderay.css
 
+// New tools to add
+//   jselenide
+//   accurest
+//   pease - http://pease.github.io/
+
 [NOTE.speaker]
 --
 Doos(a)re din mei(n) aapka svaagat hai
