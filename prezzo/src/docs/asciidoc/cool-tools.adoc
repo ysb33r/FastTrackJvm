@@ -98,7 +98,7 @@ http://leanpub.com/idiomaticgradle
 ** gradle-asciidoctor-plugin
 ** gradle-vfs-plugin
 * All code snippets tested as part of build
-** https://github.com/ysb33r/
+* https://github.com/ysb33r/FastTrackJvm/tree/AylTestersMay2016
 
 == Thank you
 
