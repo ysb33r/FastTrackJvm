@@ -34,7 +34,7 @@ class SimpleHttpServerSpec extends Specification {
     // end::testhttpclient_setup[]
 
     // tag::testhttpclient_post[]
-    def "The echo path should return what is send to it"() {
+    def "The echo path should return what is sent to it"() {
         given: "A simple text request"
         requestSpec { pay ->
               pay.body.type(MediaType.PLAIN_TEXT_UTF8).text('नमस्ते दुनिया')

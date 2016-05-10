@@ -17,10 +17,6 @@
 :prezzodir: ../../../..
 coderay-css: stylesheets/asciidoctor-coderay.css
 
-[NOTE.speaker]
---
-Doos(a)re din mei(n) aapka svaagat hai
---
 
 == About me
 
@@ -28,6 +24,16 @@ Doos(a)re din mei(n) aapka svaagat hai
 * Twitter / Ello : @ysb33r
 
 image::images/SchalkPanarama.jpg[]
+
+== Clarity of Intent
+
+{nbsp}
+
+Readability
+
+{nbsp}
+
+Expressiveness
 
 // Spock
 include::spock/spock-intro.adoc[]
@@ -88,6 +94,8 @@ http://leanpub.com/idiomaticgradle
 ** Multi-component test framework
 * Arquillian (http://arquillian.org/)
 ** J2EE testing within app servers
+* JSelenide (http://selenide.org/)
+** Alternative to Geb
 
 == About this presentation
 
@@ -98,7 +106,7 @@ http://leanpub.com/idiomaticgradle
 ** gradle-asciidoctor-plugin
 ** gradle-vfs-plugin
 * All code snippets tested as part of build
-* https://github.com/ysb33r/FastTrackJvm/tree/AylTestersMay2016
+* https://github.com/ysb33r/FastTrackJvm/tree/AylTestersMay2016/prezzo
 
 == Thank you
 
