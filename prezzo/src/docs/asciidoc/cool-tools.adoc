@@ -29,13 +29,6 @@ Doos(a)re din mei(n) aapka svaagat hai
 
 image::images/SchalkPanarama.jpg[]
 
-== Technical Tester
-
-* Work on coding skills
-* Think
-* Be open-minded
-* Testing is even more important that development.
-
 // Spock
 include::spock/spock-intro.adoc[]
 
@@ -87,6 +80,15 @@ image::images/idiomaticgradlevol1.png[height=30%,width=30%]
 
 http://leanpub.com/idiomaticgradle
 
+== Other Noteworthy Tools
+
+* AccuREST (https://github.com/Codearte/accurest)
+** REST APIs with customer-driven contracts
+* UniTEE (http://www.autocognite.com/)
+** Multi-component test framework
+* Arquillian (http://arquillian.org/)
+** J2EE testing within app servers
+
 == About this presentation
 
 * Written in Asciidoctor ({asciidoctorj})
@@ -96,8 +98,9 @@ http://leanpub.com/idiomaticgradle
 ** gradle-asciidoctor-plugin
 ** gradle-vfs-plugin
 * All code snippets tested as part of build
+** https://github.com/ysb33r/
 
-== Thank you धन्यवाद
+== Thank you
 
 Schalk Cronjé
 

@@ -1,9 +1,0 @@
-image:images/sdkman-logo.png[height=15%,width=15%]
-image:images/grails-logo.svg[height=15%,width=15%]
-image:images/groovyduke.jpg[height=15%,width=15%]
-image:images/griffon-logo.png[height=15%,width=15%]
-
-image:images/gradle-logo.png[height=15%,width=15%]
-image:images/geb-logo.svg[height=15%,width=15%]
-image:images/ratpackfw-logo.png[height=15%,width=15%]
-image:images/grooscript-logo.png[height=15%,width=15%]
