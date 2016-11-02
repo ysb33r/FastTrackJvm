@@ -4,6 +4,7 @@ import geb.spock.GebReportingSpec
 import org.openqa.selenium.By
 import org.ysb33r.theinternet.TestableWebServer
 import spock.lang.AutoCleanup
+import spock.lang.Ignore
 import spock.lang.Shared
 
 // tag::gebspec[]
@@ -12,6 +13,7 @@ class CheckboxReportingSpec extends GebReportingSpec {
 
     static final String webroot = "http://the-internet.herokuapp.com"
 
+    @Ignore
     // tag::gebspec_checkboxes[]
     def 'Learn about testing checkboxes'() {
         when: 'I go to that the-internet site'

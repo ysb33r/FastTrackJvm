@@ -13,7 +13,7 @@ image::images/betamax.png[]
 ** Commit to source control
 ** Remember to sanitize auth credentials!
 
-=== Demo
+=== Yaml
 
 image::images/betamax-yaml.png[]
 

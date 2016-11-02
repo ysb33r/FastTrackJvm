@@ -78,8 +78,6 @@ include::gradle/gradle-intro.adoc[]
 
 include::gradle/gradle-links.adoc[leveloffset=+1]
 
-== DEMO
-
 == {nbsp}
 
 image::images/idiomaticgradlevol1.png[height=30%,width=30%]
